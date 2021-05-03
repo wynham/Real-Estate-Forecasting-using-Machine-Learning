@@ -3,17 +3,19 @@
 Purchasing a property is likely the biggest financial decision most of us will ever make in our lives, yet the average consumer doesn’t have access to sophisticated tools for forecasting the future value of property. Enter Sixth Sense: a forecasting tool created to help the average consumer make better investment decisions. Sixth Sense uses Machine Learning to analyze real estate markets across the US and help consumers understand the expected future value of property in hundreds of locations. Sixth sense allows users to type in a city they're interested in purchasing property in. It then returns the current average property value in the selected city, the expected average property value in 10 years, and the expected ROI over 10 years.
 
 ### This project is broken into 3 connected parts:
-The first two parts of this project live in Google Colab. I've provided links to both Colab files below. The third part of this project lives in Amazon Lambda - I've also provided a link to that. All of these files can also be found in the 'Project_2' folder.
+The first two parts of this project live in Google Colab. I've provided links to both Colab files below. The third part of this project lives in Amazon Lambda, which then connects to our Amazon Lex chatbot. I've also provided a link to that. All of these files can also be found in the 'Project_2' folder.
 
 #### Part 1 - Import Data, Clean Data, Run Algorithim, And Visualize Results: 
 In the first part of the project, we imported 30 years of property data from thousands of cities in the USA. We used Zillow as our data source and Google Colab to host our notebook. After importing the data, we cleaned and prepared it so that it could be interpreted by FB Prophet. Next we ran it through FB Prophet. Lastly, we visualized the results.
 https://colab.research.google.com/drive/1Pa2gi70c5HTbXJAZ4_XmEi6Odctb5Lrn?usp=sharing
 
 #### Part 2 - Iterate Through Every City, Export to JSON:
-Part 2 of this project pulls in most recent intraday data in from the Alpha Vantage API for whichever stock the User selects. Once the User saves and runs the code, the intraday movement of the stock is displayed in a DASH app. It displays 3 things: (1) the ticker that the User selected, (2) an indicator graph that displays the percent change in the stock over that day, and (3) a line graph that shows how the stock's price changed throughout the day. If the stock price finished higher at the end of the day, the indicator and line graph will be green, if not, they will be displayed in red. Furthermore, since the graphs are built using Plotly, the User can zoom into certain areas of the graph to get a closer look.
+In Part 2 of this project, we create a function that iterates through every city in the dataset, and then exports that data to JSON format (this file is included in the Project-2 folder). Once its in JSON format, we're able to download it and insert it into our lambda function.
+https://colab.research.google.com/drive/1NQ1_A6a0bIjlJclaUv_uLZO99cAUfUK-?usp=sharing
 
 #### Part 3 - Amazon Lambda for Lex Bot:
-
+Part 3 is the final step in our project. Once the JSON data is imported and we have all of our data in the lambda function, we then build out our lambda function so that it is ready to interact with our Lex Chatbot. Once the chatbot is prepared, the user is able to interact with the bot to get information about cities they're interested in buying property in.
+https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/sixth_sense?tab=code
 
 ---
 
