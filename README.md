@@ -7,6 +7,7 @@ The first two parts of this project live in Google Colab. I've provided links to
 
 #### Part 1 - Import Data, Clean Data, Run Algorithim, And Visualize Results: 
 https://colab.research.google.com/drive/1Pa2gi70c5HTbXJAZ4_XmEi6Odctb5Lrn?usp=sharing
+
 In the first part of the project, we imported 30 years of property data from thousands of cities in the USA. We used Zillow as our data source and Google Colab to host our notebook. After importing the data, we cleaned and prepared it so that it could be interpreted by FB Prophet. Next we ran it through FB Prophet. Lastly, we visualized the results.
 
 #### Part 2 - Iterate Through Every City, Export to JSON:
