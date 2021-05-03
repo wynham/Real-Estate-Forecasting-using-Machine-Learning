@@ -55,20 +55,11 @@ import datetime as dt
 ## Usage/Examples
 
 ### Part 1 
--Open collect_data.ipynb first to collect the data from the api
--Input the desired stock tickers in brackets within the get_financials function
--After this code is ran a series of JSON files will be created on the users computer
+Pat 1 is where we imported our data from Zillow, cleaned it, ran it through FB Prophet, and then visualized the results. The images below are of the visualizations we got from FB Prophet. In these examples we're looking at projections for Austin, Texas. The first image shows the FB Prophet results for yhat, yhat upper, and yhat lower over ten years. The second image shows monthly trends, which are useful for understanding the best time to buy and sell a home.
 
--Open import_data.ipynb to read the JSON files and manipulate the data
--To return the desired financials input the stock ticker and statement you wish to pull as follows:  ret = get_financials([ticker], statement)
--The desired data will now to returned to whatever variable the user equated it to and is ready to be turned into a data frame
+![part_1_visual](./readme_images/part_1.png)
 
--Create a dataframe using Pandas to allow for data manipulation, analysis and visualization. 
-
-![usage_example_1.png](usage_example_1.png)
-
-![usage_example_2.png](usage_example_2.png)
-
+![part_1_visual2](./readme_images/part_1_1.png)
 
 ### Part 2
 
