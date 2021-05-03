@@ -95,19 +95,9 @@ import datetime as dt
 
 ---
 
-## Examples
-
-make sure you activate your conda dev environment (python 3.8) before running the code, then intall all the required libraries so that the DASH app will work:
-```
-conda activate dev
-```
-After the dev environment is active, make your imports and follow the comment instructions in the code. Put your desired ticker in, run the code, and then navigate to the recomended Flask server to see the DASH app (http://127.0.0.1:3000/)
-
----
-
 ## Contributors
 
-UCB Fintech Bootcamp, Gabriel Silva & Wynham Guillemot 
+UCB Fintech Bootcamp; Wynham Guillemot, Ehab, Peter, Mattheus
 
 ---
 
@@ -115,7 +105,7 @@ UCB Fintech Bootcamp, Gabriel Silva & Wynham Guillemot
 
 MIT License
 
-Copyright (c) [2021] [UCB Fintech Bootcamp, Gabriel Silva & Wynham Guillemot]
+Copyright (c) [2021] [UCB Fintech Bootcamp, Wynham Guillemot, Ehab, Peter, Mattheus]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
