@@ -6,9 +6,8 @@ Purchasing a property is likely the biggest financial decision most of us will e
 The first two parts of this project live in Google Colab. I've provided links to both Colab files below. The third part of this project lives in Amazon Lambda - I've also provided a link to that. All of these files can also be found in the 'Project_2' folder.
 
 #### Part 1 - Import Data, Clean Data, Run Algorithim, And Visualize Results: 
-https://colab.research.google.com/drive/1Pa2gi70c5HTbXJAZ4_XmEi6Odctb5Lrn?usp=sharing
-
 In the first part of the project, we imported 30 years of property data from thousands of cities in the USA. We used Zillow as our data source and Google Colab to host our notebook. After importing the data, we cleaned and prepared it so that it could be interpreted by FB Prophet. Next we ran it through FB Prophet. Lastly, we visualized the results.
+https://colab.research.google.com/drive/1Pa2gi70c5HTbXJAZ4_XmEi6Odctb5Lrn?usp=sharing
 
 #### Part 2 - Iterate Through Every City, Export to JSON:
 Part 2 of this project pulls in most recent intraday data in from the Alpha Vantage API for whichever stock the User selects. Once the User saves and runs the code, the intraday movement of the stock is displayed in a DASH app. It displays 3 things: (1) the ticker that the User selected, (2) an indicator graph that displays the percent change in the stock over that day, and (3) a line graph that shows how the stock's price changed throughout the day. If the stock price finished higher at the end of the day, the indicator and line graph will be green, if not, they will be displayed in red. Furthermore, since the graphs are built using Plotly, the User can zoom into certain areas of the graph to get a closer look.
