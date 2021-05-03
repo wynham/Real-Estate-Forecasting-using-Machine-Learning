@@ -1,2 +1,158 @@
-# UCB_Fintech_Project_2
-Repository for Project 2: Sixth Sense
+# Fintech Project 2 - Sixth Sense: Real Estate Forecasting using Machine Learning
+
+Purchasing a property is likely the biggest financial decision most of us will ever make in our lives, yet the average consumer doesn’t have access to sophisticated tools for forecasting the future value of property. Enter Sixth Sense: a forecasting tool created to help the average consumer make better investment decisions. Sixth Sense uses Machine Learning to analyze real estate markets across the US and help consumers understand the expected future value of property in hundreds of locations. Sixth sense allows users to type in a city they're interested in purchasing property in. It then returns the current average property value in the selected city, the expected average property value in 10 years, and the expected ROI over 10 years.
+
+### This project is broken into 3 connected parts:
+The first two parts of this project live in Google Colab. I've provided links to both Colab files below. The third part of this project lives in Amazon Lambda - I've also provided a link to that. All of these files can also be found in the 'Project_2' folder.
+
+#### Part 1 - Import Data, Clean Data, Run Algorithim, And Visualize Results: 
+https://colab.research.google.com/drive/1Pa2gi70c5HTbXJAZ4_XmEi6Odctb5Lrn?usp=sharing
+In the first part of the project, we imported 30 years of property data from thousands of cities in the USA. We used Zillow as our data source and Google Colab to host our notebook. After importing the data, we cleaned and prepared it so that it could be interpreted by FB Prophet. Next we ran it through FB Prophet. Lastly, we visualized the results.
+
+#### Part 2 - Iterate Through Every City, Export to JSON:
+Part 2 of this project pulls in most recent intraday data in from the Alpha Vantage API for whichever stock the User selects. Once the User saves and runs the code, the intraday movement of the stock is displayed in a DASH app. It displays 3 things: (1) the ticker that the User selected, (2) an indicator graph that displays the percent change in the stock over that day, and (3) a line graph that shows how the stock's price changed throughout the day. If the stock price finished higher at the end of the day, the indicator and line graph will be green, if not, they will be displayed in red. Furthermore, since the graphs are built using Plotly, the User can zoom into certain areas of the graph to get a closer look.
+
+#### Part 3 - Amazon Lambda for Lex Bot:
+
+
+---
+
+## Technologies
+
+Part 1:
+
+[json](json) - to interact with JSON files in Python
+
+[pandas](pandas) - Python package that provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both   easy and intuitive
+
+[path](path) - to find files and read them into the program
+
+[NumPy](NumPy) - NumPy is a Python library used for working with arrays
+
+[hvplot](hvplot) - to visualize data in interactive graphs.
+
+
+Part 2:
+
+
+```python
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+from alpha_vantage.timeseries import TimeSeries 
+import dash                               
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Output, Input
+import dash_bootstrap_components as dbc  
+```
+
+---
+
+## Installation Guide
+
+Install the following in your conda dev environment
+
+Part 1:
+
+```python
+pip install path
+pip install pandas
+pip install json
+pip install numpy
+pip install hvplot
+```
+Part 2: 
+
+```python
+pip install dash
+pip install dash-bootstrap-components
+pip install alpha-vantage
+```
+
+---
+
+## Usage
+
+### Part 1 
+-Open collect_data.ipynb first to collect the data from the api
+-Input the desired stock tickers in brackets within the get_financials function
+-After this code is ran a series of JSON files will be created on the users computer
+
+-Open import_data.ipynb to read the JSON files and manipulate the data
+-To return the desired financials input the stock ticker and statement you wish to pull as follows:  ret = get_financials([ticker], statement)
+-The desired data will now to returned to whatever variable the user equated it to and is ready to be turned into a data frame
+
+-Create a dataframe using Pandas to allow for data manipulation, analysis and visualization. 
+
+![usage_example_1.png](usage_example_1.png)
+
+![usage_example_2.png](usage_example_2.png)
+
+
+### Part 2
+
+-Make all the necessary installations and imports, then type in the ticker name you would like to see data for.
+
+-Once ticker is entered, save the file and the dash app will automatically update
+-In this section we make the API call and select which columns to pull data from. We'll use an interval of every 5 minutes
+
+-the dataframe is then saved into a CSV file each time a new ticker is selected by the User
+-The progeram then reads the saved CSV file
+
+-Next, we have the main setup for the DASH app, and the next section sets up the layout for the DASH app
+
+-Next we setup the DASH app callback for the Indicator Graph. The indicator graph shows the percent change for the stock over the course of the day
+-It will either display numbers in green if there was a positive change, or red if there was a negative change in the stocks value over the course of the day
+
+-Next we setup the DASH app callback for the Line Graph. Similarly, it will display a green line with green filling underneath if there was a positive change, or it wil display a red line with red filling underneath if there was a negative change over the course of the day
+
+-The final function that makes the DASH app run
+-After the program runs, navigate to this link (http://127.0.0.1:3000/) to run the program. This link will also display in your terminal below
+
+![usage_example_3.png](usage_example_3.png)
+
+![usage_example_4.png](usage_example_4.png)
+
+
+---
+
+## Examples
+
+make sure you activate your conda dev environment (python 3.8) before running the code, then intall all the required libraries so that the DASH app will work:
+```
+conda activate dev
+```
+After the dev environment is active, make your imports and follow the comment instructions in the code. Put your desired ticker in, run the code, and then navigate to the recomended Flask server to see the DASH app (http://127.0.0.1:3000/)
+
+---
+
+## Contributors
+
+UCB Fintech Bootcamp, Gabriel Silva & Wynham Guillemot 
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) [2021] [UCB Fintech Bootcamp, Gabriel Silva & Wynham Guillemot]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
