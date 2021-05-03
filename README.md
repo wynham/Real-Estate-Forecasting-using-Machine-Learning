@@ -62,29 +62,11 @@ Pat 1 is where we imported our data from Zillow, cleaned it, ran it through FB P
 ![part_1_visual2](./readme_images/part_1_1.png)
 
 ### Part 2
+In Part two of our project, we iterate through every city and then export the results to JSON. In the image below, we show the function used to iterate through the cities in the dataset, and then dump to JSON.
 
--Make all the necessary installations and imports, then type in the ticker name you would like to see data for.
+![part_2_visual](./readme_images/part_2.png)
 
--Once ticker is entered, save the file and the dash app will automatically update
--In this section we make the API call and select which columns to pull data from. We'll use an interval of every 5 minutes
-
--the dataframe is then saved into a CSV file each time a new ticker is selected by the User
--The progeram then reads the saved CSV file
-
--Next, we have the main setup for the DASH app, and the next section sets up the layout for the DASH app
-
--Next we setup the DASH app callback for the Indicator Graph. The indicator graph shows the percent change for the stock over the course of the day
--It will either display numbers in green if there was a positive change, or red if there was a negative change in the stocks value over the course of the day
-
--Next we setup the DASH app callback for the Line Graph. Similarly, it will display a green line with green filling underneath if there was a positive change, or it wil display a red line with red filling underneath if there was a negative change over the course of the day
-
--The final function that makes the DASH app run
--After the program runs, navigate to this link (http://127.0.0.1:3000/) to run the program. This link will also display in your terminal below
-
-![usage_example_3.png](usage_example_3.png)
-
-![usage_example_4.png](usage_example_4.png)
-
+### Part 3
 
 ---
 
