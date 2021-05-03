@@ -55,18 +55,23 @@ import datetime as dt
 ## Usage/Examples
 
 ### Part 1 
-Pat 1 is where we imported our data from Zillow, cleaned it, ran it through FB Prophet, and then visualized the results. The images below are of the visualizations we got from FB Prophet. In these examples we're looking at projections for Austin, Texas. The first image shows the FB Prophet results for yhat, yhat upper, and yhat lower over ten years. The second image shows monthly trends, which are useful for understanding the best time to buy and sell a home.
+Part 1 is where we imported our data from Zillow, cleaned it, ran it through FB Prophet, and then visualized the results. The images below are of the visualizations we got from FB Prophet. In these examples we're looking at projections for Austin, Texas. The first image shows the FB Prophet results for yhat, yhat upper, and yhat lower over ten years. The second image shows monthly trends, which are useful for understanding the best time to buy and sell a home.
 
 ![part_1_visual](./readme_images/part_1.png)
 
 ![part_1_visual2](./readme_images/part_1_1.png)
 
 ### Part 2
-In Part two of our project, we iterate through every city and then export the results to JSON. In the image below, we show the function used to iterate through the cities in the dataset, and then dump to JSON.
+In Part 2 of our project, we iterate through every city and then export the results to JSON. In the image below, we show the function used to iterate through the cities in the dataset, and then dump to JSON.
 
 ![part_2_visual](./readme_images/part_2.png)
 
 ### Part 3
+In the final part of our project, we imported the JSON data into an Amazon Lambda function, and then connected that function to the Amazon Lex bot. In the first image, we show the JSON data inside the Amazon Lambda function. In the second image, we show what the Amazon Lex bot looks like.
+
+![part_3_visual](./readme_images/part_3.png)
+
+![part_3_visual2](./readme_images/part_3_1.png)
 
 ---
 
