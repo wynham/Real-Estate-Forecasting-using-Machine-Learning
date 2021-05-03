@@ -19,60 +19,38 @@ Part 2 of this project pulls in most recent intraday data in from the Alpha Vant
 
 ## Technologies
 
-Part 1:
+Installations:
 
-[json](json) - to interact with JSON files in Python
+```python
+from IPython.display import clear_output
+try:
+  !pip install pystan
+  !pip install fbprophet
+  !pip install hvplot
+  !pip install holoviews
+except:
+  print("Error installing libraries")
+finally:
+  clear_output()
+  print('Libraries successfully installed')
+```
 
-[pandas](pandas) - Python package that provides fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both   easy and intuitive
 
-[path](path) - to find files and read them into the program
-
-[NumPy](NumPy) - NumPy is a Python library used for working with arrays
-
-[hvplot](hvplot) - to visualize data in interactive graphs.
-
-
-Part 2:
+Imports:
 
 
 ```python
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from alpha_vantage.timeseries import TimeSeries 
-import dash                               
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import Output, Input
-import dash_bootstrap_components as dbc  
+import holoviews as hv
+from fbprophet import Prophet
+import hvplot.pandas
+import datetime as dt
+%matplotlib inline 
 ```
 
 ---
 
-## Installation Guide
-
-Install the following in your conda dev environment
-
-Part 1:
-
-```python
-pip install path
-pip install pandas
-pip install json
-pip install numpy
-pip install hvplot
-```
-Part 2: 
-
-```python
-pip install dash
-pip install dash-bootstrap-components
-pip install alpha-vantage
-```
-
----
-
-## Usage
+## Usage/Examples
 
 ### Part 1 
 -Open collect_data.ipynb first to collect the data from the api
